@@ -25,25 +25,25 @@ int sumar(int num1, int num2);
 int restar(int num1, int num2);
 
 /**
- * @brief
- * @param num1
- * @param num2
- * @return
+ * @brief multiplica dos numeros ingresados por el usuario
+ * @param num1 es el primero numero ingresado
+ * @param num2 es el segundo resultado ingresado
+ * @return me retorna el resultado de la multiplicacion entre ambos numeros
  */
 int multiplicar(int num1, int num2);
 
 /**
- * @brief
- * @param num1
- * @param num2
- * @return
+ * @brief divide dos numeros ingresados por el usuario
+ * @param num1 es el primer numero ingresado
+ * @param num2 es el segundo numero ingresado
+ * @return me retorna el resultado de la division entre ambos numeros
  */
 float dividir(int num1, int num2);
 
 /**
- * @brief
- * @param num1
- * @return
+ * @brief agarra un numero entero positivo y lo multiplica por todos los numeros que lo separan del 1
+ * @param num1 es el numero que se ingresa para sacar su factorial
+ * @return me retorna el resultado del factorial
  */
 long int factorial(int num1);
 

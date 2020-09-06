@@ -14,10 +14,11 @@
 
 int menuPrincipal(int flag1, int flag2, int num1, int num2)
 {
+	system("color 05");
 	int opcion;
-	if(!flag1 && !flag2)
+	if(!flag1 && !flag2)//Menu en bruto cuando se ingresa la primera vez
 	{
-		printf("    Menu Principal\n");
+		printf("**** Menu Principal ****\n");
 	   printf("    [1] Ingresar 1er operando (A=x)\n");
 	   printf("    [2] Ingresar 2do operando (B=y)\n");
 	   printf("    [3] Calcular todas las operaciones\n");
@@ -26,12 +27,13 @@ int menuPrincipal(int flag1, int flag2, int num1, int num2)
 	   printf("		c) Calcular la division (A/B)\n");
 	   printf("		d) Calcular la multiplicacion (A*B)\n");
 	   printf("		e) Calcular el factorial (A!)\n");
+	   printf("		f)Calcular el factorial (B!)\n");
 	   printf("    [4] Informar resultados\n");
 	   printf("    [5] Salir\n"
 			  "    Opcion: ");
 
 	}
-	else if(flag1 && !flag2)
+	else if(flag1 && !flag2)//Menu cuando se ingresa el primer operando
 	{
 		printf("    Menu Principal\n");
 	   printf("    [1] Ingresar 1er operando (A=%d)\n", num1);
@@ -42,12 +44,12 @@ int menuPrincipal(int flag1, int flag2, int num1, int num2)
 	   printf("		c) Calcular la division (%d/B)\n", num1);
 	   printf("		d) Calcular la multiplicacion (%d*B)\n", num1);
 	   printf("		e) Calcular el factorial (%d!)\n", num1);
-	   printf("     f)Calcular el factorial B\n");
+	   printf("		f)Calcular el factorial (B!)\n");
 	   printf("    [4] Informar resultados\n");
 	   printf("    [5] Salir\n"
 			  "    Opcion: ");
 	}
-	else if (flag2)
+	else if (flag2)//menu cuando se ingresa el segundo operando (junto con el primer operando ya ingresado)
 	{
 		printf("    Menu Principal\n");
 	   printf("    [1] Ingresar 1er operando (A=%d)\n", num1);
@@ -58,7 +60,7 @@ int menuPrincipal(int flag1, int flag2, int num1, int num2)
 	   printf("		c) Calcular la division (%d/%d)\n", num1, num2);
 	   printf("		d) Calcular la multiplicacion (%d*%d)\n", num1, num2);
 	   printf("		e) Calcular el factorial (%d!)\n", num1);
-	   printf("     f)Calcular el factorial %d\n", num2);
+	   printf("		f)Calcular el factorial (%d!)\n", num2);
 	   printf("    [4] Informar resultados\n");
 	   printf("    [5] Salir\n"
 			  "    Opcion: ");
@@ -80,6 +82,7 @@ int cargaNumero()
 
 int main(void) {
 
+	//declaracion de variables
 	int numero1;
 	int numero2;
 
@@ -95,6 +98,8 @@ int main(void) {
 	int flagSegundoNumero;
 	int flagResultados;
 
+
+	//inicializacion
 	respuesta = 's';
 	validarSalida = 'n';
 
@@ -137,20 +142,20 @@ int main(void) {
 			case 4://Mostrar resultados
 				if(flagResultados)
 				{
-					printf("El resultado de A+B es: %d\n ", resultadoSuma);
-					printf("El resultado de A-B es: %d\n", resultadoResta);
+					printf("El resultado de %d+%d es: %d\n ", numero1, numero2, resultadoSuma);
+					printf("El resultado de %d-%d es: %d\n",numero1, numero2, resultadoResta);
 					if(numero2 != 0)
 					{
-						printf("El resultado de A/B es: %.2f\n ", resultadoDiv);
+						printf("El resultado de %d/%d es: %.2f\n ",numero1, numero2, resultadoDiv);
 					}
 					else
 					{
 						printf("No se puede dividir por cero");
 					}
-					printf("El resultado de A*B es: %d\n", resultadoMulti);
+					printf("El resultado de %d*%d es: %d\n",numero1, numero2, resultadoMulti);
 					if(numero1 >= 0)
 					{
-						printf("El factorial de A es: %li\n ", factorial1);
+						printf("El factorial de %d es: %li\n ",numero1, factorial1);
 					}
 					else
 					{
@@ -159,7 +164,7 @@ int main(void) {
 
 					if(numero2 >= 0)
 					{
-						printf("y El factorial de B es: %li\n", factorial2);
+						printf("y El factorial de %d es: %li\n",numero2, factorial2);
 					}
 					else
 					{
@@ -171,7 +176,7 @@ int main(void) {
 					printf("No hay resultados validos que mostrar\n");
 				}
 				break;
-			case 5:
+			case 5:// Salir
 				printf("Esta seguro que desea salir (s/n)?");
 				fflush(stdin);
 				scanf("%c",&validarSalida);
