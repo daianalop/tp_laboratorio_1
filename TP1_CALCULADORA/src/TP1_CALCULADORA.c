@@ -1,10 +1,11 @@
 /*
  ============================================================================
- Name        : TP1_CALCULADORA.c
- Author      : Daiana Andrea Lopez
- Version     :
- Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
+ Name          : TP1_CALCULADORA.c
+ Author        : Daiana Andrea Lopez
+ Año y division: 1G
+ Version       :
+ Copyright     : Your copyright notice
+ Description   : TP1 Calculadora
  ============================================================================
  */
 
