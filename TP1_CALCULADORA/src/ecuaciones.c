@@ -9,31 +9,31 @@
 #include <stdlib.h>
 #include "ecuaciones.h"
 
-int sumar(int num1, int num2)
+float sumar(float num1, float num2)
 {
-	int resultado;
+	float resultado;
 	resultado = num1 + num2;
 
 	return resultado;
 }
 
-int restar(int num1, int num2)
+float restar(float num1, float num2)
 {
-	int resultado;
+	float resultado;
 	resultado = num1 - num2;
 
 	return resultado;
 }
 
-int multiplicar(int num1, int num2)
+float multiplicar(float num1, float num2)
 {
-	int resultado;
+	float resultado;
 	resultado = num1 * num2;
 
 	return resultado;
 }
 
-float dividir(int num1, int num2)
+float dividir(float num1, float num2)
 {
 	float resultado;
 	if(num2 != 0)
@@ -45,9 +45,9 @@ float dividir(int num1, int num2)
 	return resultado;
 }
 
-long int factorial(int num1)
+unsigned long int factorial(float num1)
 {
-	long int resultado;
+	unsigned long int resultado;
 
 	resultado = -1;
 
@@ -63,3 +63,17 @@ long int factorial(int num1)
 	return resultado;
 }
 
+int validarNumeroNat(float num1)
+{
+	int entero;
+	int valorDeRetorno;
+
+	entero = (int) num1;
+	valorDeRetorno = 1;
+	if(entero - num1 || num1 < 0 )
+	{
+		valorDeRetorno = 0;
+	}
+
+	return valorDeRetorno;
+}

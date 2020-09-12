@@ -8,13 +8,14 @@
 #ifndef ECUACIONES_H_
 #define ECUACIONES_H_
 
+
 /**
  * @brief suma dos numeros ingresados por el usuario
  * @param num1 es el primer numero ingresado
  * @param num2 es el segundo numero ingresado
  * @return me retorna el resultado de la suma de ambos numeros ingresados
  */
-int sumar(int num1, int num2);
+float sumar(float num1, float num2);
 
 /**
  * @brief  resta dos numeros ingresados por el usuario
@@ -22,7 +23,7 @@ int sumar(int num1, int num2);
  * @param num2 es el segundo numero ingresado
  * @return me retorna el resultado de la resta de ambos numeros ingresados
  */
-int restar(int num1, int num2);
+float restar(float num1, float num2);
 
 /**
  * @brief multiplica dos numeros ingresados por el usuario
@@ -30,7 +31,7 @@ int restar(int num1, int num2);
  * @param num2 es el segundo resultado ingresado
  * @return me retorna el resultado de la multiplicacion entre ambos numeros
  */
-int multiplicar(int num1, int num2);
+float multiplicar(float num1, float num2);
 
 /**
  * @brief divide dos numeros ingresados por el usuario
@@ -38,13 +39,20 @@ int multiplicar(int num1, int num2);
  * @param num2 es el segundo numero ingresado
  * @return me retorna el resultado de la division entre ambos numeros
  */
-float dividir(int num1, int num2);
+float dividir(float num1, float num2);
 
 /**
  * @brief agarra un numero entero positivo y lo multiplica por todos los numeros que lo separan del 1
  * @param num1 es el numero que se ingresa para sacar su factorial
  * @return me retorna el resultado del factorial
  */
-long int factorial(int num1);
+unsigned long int factorial(float num1);
+
+/**
+ * @brief Lo hice para validar si es un numero natural para que se pueda calcular el factorial ya que solo admite numeros enteros
+ * @param num1 es el numero ingresado
+ * @return me retorna si es o no es un numero natural
+ */
+int validarNumeroNat(float num1);
 
 #endif /* ECUACIONES_H_ */

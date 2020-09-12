@@ -15,7 +15,7 @@
 
 int menuPrincipal(int flag1, int flag2, int num1, int num2)
 {
-	system("color 05");
+	system("color 0C");
 	int opcion;
 	if(!flag1 && !flag2)//Menu en bruto cuando se ingresa la primera vez
 	{
@@ -72,26 +72,28 @@ int menuPrincipal(int flag1, int flag2, int num1, int num2)
 	return opcion;
 }
 
-int cargaNumero()
+float cargaNumero()
 {
-	int numero;
+	float numero;
 	printf("    Ingrese numero: ");
-	scanf("%d", &numero);
+	scanf("%f", &numero);
 
 	return numero;
 }
 
+
+
 int main(void) {
 
 	//declaracion de variables
-	int numero1;
-	int numero2;
+	float numero1;
+	float numero2;
 
-	int resultadoSuma;
-	int resultadoResta;
-	int resultadoMulti;
-	long int factorial1;
-	long int factorial2;
+	float resultadoSuma;
+	float resultadoResta;
+	float resultadoMulti;
+	unsigned long int factorial1;
+	unsigned long int factorial2;
 	float resultadoDiv;
 	char respuesta;
 	char validarSalida;
@@ -103,6 +105,9 @@ int main(void) {
 	//inicializacion
 	respuesta = 's';
 	validarSalida = 'n';
+
+	factorial1 = 0;
+	factorial2 = 0;
 
 	flagPrimerNumero = 0;
 	flagSegundoNumero = 0;
@@ -130,8 +135,15 @@ int main(void) {
 				resultadoResta = restar(numero1, numero2);
 				resultadoMulti = multiplicar(numero1, numero2);
 				resultadoDiv = dividir(numero1, numero2);
-				factorial1 = factorial(numero1);
-				factorial2 =factorial(numero2);
+				if(validarNumeroNat(numero1))
+				{
+					factorial1 = factorial(numero1);
+				}
+
+				if(validarNumeroNat(numero2))
+				{
+					factorial2 = factorial(numero2);
+				}
 				printf("Ya se realizaron las operaciones\n");
 				flagResultados = 1;
 				}
@@ -143,33 +155,34 @@ int main(void) {
 			case 4://Mostrar resultados
 				if(flagResultados)
 				{
-					printf("El resultado de %d+%d es: %d\n ", numero1, numero2, resultadoSuma);
-					printf("El resultado de %d-%d es: %d\n",numero1, numero2, resultadoResta);
+					printf("El resultado de %.2f+%.2f es: %.2f\n ", numero1, numero2, resultadoSuma);
+					printf("El resultado de %.2f-%.2f es: %.2f\n",numero1, numero2, resultadoResta);
 					if(numero2 != 0)
 					{
-						printf("El resultado de %d/%d es: %.2f\n ",numero1, numero2, resultadoDiv);
+						printf("El resultado de %.2f/%.2f es: %.2f\n ",numero1, numero2, resultadoDiv);
 					}
 					else
 					{
 						printf("No se puede dividir por cero");
 					}
-					printf("El resultado de %d*%d es: %d\n",numero1, numero2, resultadoMulti);
-					if(numero1 >= 0)
+					printf("El resultado de %.2f*%.2f es: %.2f\n",numero1, numero2, resultadoMulti);
+					if(factorial1)
 					{
-						printf("El factorial de %d es: %li\n ",numero1, factorial1);
+						printf("El factorial de %.2f es: %li\n ",numero1, factorial1);
 					}
 					else
 					{
-						printf("No se puede calcular el factorial de un numero negativo\n");
+						printf("No se puede calcular el factorial de un numero negativo o un numero decimal\n");
 					}
 
-					if(numero2 >= 0)
+					if(factorial2)
 					{
-						printf("y El factorial de %d es: %li\n",numero2, factorial2);
+						printf("y El factorial de %.2f es: %li\n",numero2, factorial2);
 					}
 					else
 					{
-						printf("No se puede calcular el factorial de un numero negativo\n");
+
+						printf("No se puede calcular el factorial de un numero negativo o un numero decimal\n");
 					}
 				}
 				else
@@ -205,3 +218,5 @@ int main(void) {
 
 	return EXIT_SUCCESS;
 }
+
+
