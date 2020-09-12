@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "ecuaciones.h"
 
-int menuPrincipal(int flag1, int flag2, int num1, int num2)
+int menuPrincipal(int flag1, int flag2, float num1, float num2)
 {
 	system("color 0C");
 	int opcion;
@@ -37,14 +37,14 @@ int menuPrincipal(int flag1, int flag2, int num1, int num2)
 	else if(flag1 && !flag2)//Menu cuando se ingresa el primer operando
 	{
 		printf("    Menu Principal\n");
-	   printf("    [1] Ingresar 1er operando (A=%d)\n", num1);
+	   printf("    [1] Ingresar 1er operando (A=%.2f)\n", num1);
 	   printf("    [2] Ingresar 2do operando (B=y)\n");
 	   printf("    [3] Calcular todas las operaciones\n");
-	   printf("		a) Calcular la suma (%d+B)\n", num1);
-	   printf("		b) Calcular la resta (%d-B)\n", num1);
-	   printf("		c) Calcular la division (%d/B)\n", num1);
-	   printf("		d) Calcular la multiplicacion (%d*B)\n", num1);
-	   printf("		e) Calcular el factorial (%d!)\n", num1);
+	   printf("		a) Calcular la suma (%.2f+B)\n", num1);
+	   printf("		b) Calcular la resta (%.2f-B)\n", num1);
+	   printf("		c) Calcular la division (%.2f/B)\n", num1);
+	   printf("		d) Calcular la multiplicacion (%.2f*B)\n", num1);
+	   printf("		e) Calcular el factorial (%.2f!)\n", num1);
 	   printf("		f)Calcular el factorial (B!)\n");
 	   printf("    [4] Informar resultados\n");
 	   printf("    [5] Salir\n"
@@ -53,15 +53,15 @@ int menuPrincipal(int flag1, int flag2, int num1, int num2)
 	else if (flag2)//menu cuando se ingresa el segundo operando (junto con el primer operando ya ingresado)
 	{
 		printf("    Menu Principal\n");
-	   printf("    [1] Ingresar 1er operando (A=%d)\n", num1);
-	   printf("    [2] Ingresar 2do operando (B=%d)\n", num2);
+	   printf("    [1] Ingresar 1er operando (A=%.2f)\n", num1);
+	   printf("    [2] Ingresar 2do operando (B=%.2f)\n", num2);
 	   printf("    [3] Calcular todas las operaciones\n");
-	   printf("		a) Calcular la suma (%d+%d)\n", num1, num2);
-	   printf("		b) Calcular la resta (%d-%d)\n", num1, num2);
-	   printf("		c) Calcular la division (%d/%d)\n", num1, num2);
-	   printf("		d) Calcular la multiplicacion (%d*%d)\n", num1, num2);
-	   printf("		e) Calcular el factorial (%d!)\n", num1);
-	   printf("		f)Calcular el factorial (%d!)\n", num2);
+	   printf("		a) Calcular la suma (%.2f+%.2f)\n", num1, num2);
+	   printf("		b) Calcular la resta (%.2f-%.2f)\n", num1, num2);
+	   printf("		c) Calcular la division (%.2f/%.2f)\n", num1, num2);
+	   printf("		d) Calcular la multiplicacion (%.2f*%.2f)\n", num1, num2);
+	   printf("		e) Calcular el factorial (%.2f!)\n", num1);
+	   printf("		f)Calcular el factorial (%.2f!)\n", num2);
 	   printf("    [4] Informar resultados\n");
 	   printf("    [5] Salir\n"
 			  "    Opcion: ");
@@ -72,7 +72,7 @@ int menuPrincipal(int flag1, int flag2, int num1, int num2)
 	return opcion;
 }
 
-float cargaNumero()
+float cargaNumero()//carga de numeros para la opcion 1 y 2
 {
 	float numero;
 	printf("    Ingrese numero: ");
