@@ -1,10 +1,11 @@
 /*
  ============================================================================
  Name        : TP2_ABM_empleados.c
- Author      : 
- Version     :
+ Author      : Daiana Andrea Lopez
+ Version     : 1
+ Division    : 1G
  Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
+ Description : ABM para una empresa con una nomina de 1000 empleados
  ============================================================================
  */
 
